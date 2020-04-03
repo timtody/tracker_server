@@ -1,7 +1,0 @@
-{
-    "python.formatting.provider": "black",
-    "python.pythonPath": "/home/julius/env/track/bin/python",
-    "python.linting.flake8Enabled": false,
-    "python.linting.mypyEnabled": true,
-    "python.linting.enabled": true
-}
