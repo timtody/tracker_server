@@ -23,8 +23,8 @@ router = routers.DefaultRouter()
 router.register(r"tasks", views.TaskViewSet)
 router.register(r"users", views.UserViewSet)
 router.register(r"projects", views.ProjectViewSet)
-router.register(r"task-status", views.TaskStatusViewSet)
-router.register(r"task-priority", views.TaskPriorityViewSet)
+router.register(r"statuses", views.TaskStatusViewSet)
+router.register(r"priorities", views.TaskPriorityViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),

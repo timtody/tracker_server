@@ -4,9 +4,15 @@ from django.db import models
 class TaskStatus(models.Model):
     status = models.CharField("Status", max_length=32)
 
+    def __str__(self):
+        return self.status
+
 
 class TaskPriority(models.Model):
     priority = models.CharField("Priority", max_length=32)
+
+    def __str__(self):
+        return self.priority
 
 
 class User(models.Model):
@@ -17,6 +23,9 @@ class User(models.Model):
     description = models.CharField("Description", max_length=128)
     date_created = models.DateField("Member since", auto_now=True)
 
+    def __str__(self):
+        return self.first_name
+
 
 class Project(models.Model):
     summary = models.CharField("Summary", max_length=64)
@@ -26,6 +35,9 @@ class Project(models.Model):
     start = models.DateField("Start")
     end = models.DateField("End")
 
+    def __str__(self):
+        return self.summary
+
 
 class Task(models.Model):
     summary = models.CharField("Summary", max_length=64)
@@ -33,7 +45,7 @@ class Task(models.Model):
     author = models.ForeignKey(
         "User", on_delete=models.DO_NOTHING, related_name="Author"
     )
-    project = models.ForeignKey("Project", on_delete=models.DO_NOTHING)
+    project = models.ForeignKey("Project", on_delete=models.CASCADE)
     assignee = models.ForeignKey(
         "User", on_delete=models.DO_NOTHING, related_name="Assignee"
     )
@@ -43,3 +55,6 @@ class Task(models.Model):
     actual_resolution_date = models.DateField("Actual resolution date")
     progress = models.CharField("Progress", max_length=255)
     resolution_summary = models.CharField("Resolution summary", max_length=1024)
+
+    def __str__(self):
+        return self.summary

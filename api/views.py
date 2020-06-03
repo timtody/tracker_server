@@ -16,7 +16,7 @@ class TaskViewSet(viewsets.ModelViewSet):
 
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
@@ -26,7 +26,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -36,7 +36,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class TaskStatusViewSet(viewsets.ModelViewSet):
@@ -46,7 +46,7 @@ class TaskStatusViewSet(viewsets.ModelViewSet):
 
     queryset = TaskStatus.objects.all()
     serializer_class = TaskStatusSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class TaskPriorityViewSet(viewsets.ModelViewSet):
@@ -56,4 +56,4 @@ class TaskPriorityViewSet(viewsets.ModelViewSet):
 
     queryset = TaskPriority.objects.all()
     serializer_class = TaskPrioritySerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
